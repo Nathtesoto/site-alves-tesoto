@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Alves & Tesoto</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:#0b1220;
+color:white;
+}
+
+/* ANIMAÇÃO */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px;
+background:linear-gradient(90deg,#020617,#0b1220);
+}
+
+.hero h1{
+font-size:48px;
+line-height:1.2;
+}
+
+.hero p{
+color:#cbd5e1;
+}
+
+.btn{
+background:#facc15;
+padding:15px 25px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+margin-top:20px;
+border-radius:8px;
+}
+
+.hero img{
+width:420px;
+border-radius:20px;
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* INDICADORES */
+.stats{
+display:flex;
+justify-content:space-around;
+background:#020617;
+padding:30px;
+}
+
+.stat{
+text-align:center;
+}
+
+/* SEÇÕES */
+.section{
+padding:80px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#020617;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* CLIENTES */
+.clientes{
+display:flex;
+justify-content:space-around;
+margin-top:30px;
+opacity:0.8;
+}
+
+/* IA */
+.chat{
+position:fixed;
+right:30px;
+bottom:30px;
+background:#020617;
+padding:20px;
+border-radius:15px;
+width:300px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+/* CTA */
+.cta{
+background:#020617;
+padding:60px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero fade">
+
+<div>
+<h1>Transformamos pessoas,<br>processos e resultados</h1>
+
+<p>Soluções completas em RH & Marketing com Inteligência Artificial</p>
+
+<button class="btn" onclick="window.open('https://wa.me/5511972721266')">
+QUERO UM DIAGNÓSTICO
+</button>
+</div>
+
+<img src="e322ecea-5ae3-4fd0-9456-0e69774bb1cd.png">
+</div>
+
+<!-- INDICADORES -->
+<div class="stats fade">
+<div class="stat">-30%<br>Turnover</div>
+<div class="stat">+35%<br>ROI</div>
+<div class="stat">+120%<br>Leads</div>
+<div class="stat">+50%<br>Produtividade</div>
+</div>
+
+<!-- RH -->
+<div class="section fade">
+<h2>RH Inteligente</h2>
+
+<div class="grid">
+<div class="card">Recrutamento & Seleção</div>
+<div class="card">PDI / PDL</div>
+<div class="card">Avaliação de Desempenho</div>
+<div class="card">Onboarding / Offboarding</div>
+<div class="card">Indicadores RH</div>
+<div class="card">Cultura Organizacional</div>
+</div>
+</div>
+
+<!-- MARKETING -->
+<div class="section fade">
+<h2>Marketing Estratégico</h2>
+
+<div class="grid">
+<div class="card">Planejamento</div>
+<div class="card">Persona / ICP</div>
+<div class="card">Funil de Marketing</div>
+<div class="card">Conteúdo & Mídia</div>
+<div class="card">Métricas</div>
+<div class="card">CRM</div>
+</div>
+</div>
+
+<!-- CLIENTES -->
+<div class="section fade">
+<h2>Empresas que confiam</h2>
+
+<div class="clientes">
+<div>Octea</div>
+<div>Invictus</div>
+<div>Grupo Kaizen</div>
+<div>Alpha Pneus</div>
+<div>Greenv</div>
+</div>
+</div>
+
+<!-- IA -->
+<div class="chat">
+<h3>TEA 🤖</h3>
+
+<p id="r">Como posso ajudar?</p>
+
+<input id="p">
+<button class="btn" onclick="ask()">Enviar</button>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta fade">
+<h2>Pronta para transformar sua empresa?</h2>
+
+<button class="btn" onclick="window.open('https://wa.me/5511972721266')">
+FALAR NO WHATSAPP
+</button>
+</div>
+
+<script>
+// IA
+function ask(){
+let r = document.getElementById("r");
+r.innerHTML="Analisando...";
+
+setTimeout(()=>{
+r.innerHTML="Diagnóstico estratégico gerado.";
+},1000);
+}
+
+// ANIMAÇÃO
+const fade = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', ()=>{
+fade.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
